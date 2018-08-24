@@ -246,6 +246,7 @@ vtkXMLDataElement* vtkPlusConfig::CreateDeviceSetConfigurationFromFile(const std
   std::ostringstream xmlFileContents;
   PlusCommon::XML::PrintXML(xmlFileContents, vtkIndent(1), configRootElement);
   LOG_DEBUG("Device set configuration file contents: " << std::endl << xmlFileContents.str());
+  vtkPlusConfig::GetInstance()->SetDeviceSetConfigurationData(configRootElement);
 
   return configRootElement;
 }
